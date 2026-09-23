@@ -110,21 +110,36 @@ section{scroll-margin-top:72px}
 .piece .glaze{position:absolute;left:14px;top:12px;color:var(--muted);font-size:.72rem}
 .piece h3{font-size:1.8rem;line-height:1;font-weight:500}
 .piece p{color:var(--muted);font-size:.98rem}
-.piece .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.piece .row{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 .linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--gold);cursor:pointer;font-family:var(--caps);letter-spacing:.14em;text-transform:uppercase;font-size:.74rem;white-space:nowrap;padding-block:6px}
 .linkbtn:hover{text-decoration:underline;text-underline-offset:4px}
 
 /* manifesto */
 .manifesto{background:var(--surface);border-block:1px solid var(--line);position:relative;overflow:hidden}
 .manifesto .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,72px);align-items:center}
-.manifesto blockquote{margin:0;font-family:var(--display);font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1.12;font-style:italic;max-width:22ch;text-wrap:balance}
-.manifesto blockquote b{font-weight:400;font-style:normal;color:var(--gold)}
-.manifesto cite{display:block;margin-top:24px;font-style:normal;color:var(--muted)}
-.laurel{width:clamp(90px,14vw,170px);color:var(--olive);transform-origin:50% 100%;animation:sway 7s ease-in-out infinite}
+.quote-sec .wrap{display:block}
+.wreath{margin:0 auto;max-width:1000px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(20px,5vw,72px);text-align:center}
+.wreath .q{display:flex;flex-direction:column;align-items:center}
+.manifesto blockquote{margin:0;font-family:var(--display);font-size:clamp(1.9rem,4vw,3.3rem);line-height:1.14;font-style:italic;font-weight:500;max-width:20ch;text-wrap:balance}
+.manifesto blockquote b{font-weight:500;font-style:normal;color:var(--gold)}
+.manifesto cite{display:flex;align-items:center;gap:14px;margin-top:28px;font-style:normal;color:var(--muted)}
+.manifesto cite::before,.manifesto cite::after{content:"";width:28px;height:1px;background:var(--gold)}
+.laurel{width:clamp(70px,10vw,130px);color:var(--olive);transform-origin:50% 100%}
+.laurel.l{animation:swayL 7s ease-in-out infinite}
+.laurel.r{animation:swayR 7s ease-in-out infinite}
 .laurel .leaf{fill:currentColor;opacity:.85}
 .laurel .stem{fill:none;stroke:currentColor;stroke-width:1.4}
 .laurel .star{fill:var(--gold)}
-@keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2.5deg)}}
+@keyframes swayL{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(-10deg)}}
+@keyframes swayR{0%,100%{transform:scaleX(-1) rotate(-14deg)}50%{transform:scaleX(-1) rotate(-10deg)}}
+@media (max-width:640px){
+  .wreath{grid-template-columns:1fr 1fr;gap:0 8px}
+  .wreath .q{grid-column:1/-1;grid-row:2;margin-top:8px}
+  .laurel{width:64px;grid-row:1}
+  .laurel.l{justify-self:end;margin-right:4px}
+  .laurel.r{justify-self:start;margin-left:4px}
+  .manifesto blockquote{font-size:clamp(1.8rem,7.4vw,2.3rem)}
+}
 
 /* designer */
 .designer{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:stretch}
@@ -252,9 +267,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </section>
 
-<section class="manifesto sec" aria-label="Atölye">
+<section class="manifesto sec quote-sec" aria-label="Atölye">
   <div class="wrap">
-    <svg class="laurel" viewBox="0 0 120 220" aria-hidden="true">
+    <figure class="wreath">
+      <svg class="laurel l" viewBox="0 0 120 220" aria-hidden="true">
       <path class="stem" d="M60 214 C 58 170 52 120 60 70 C 64 46 62 26 60 10"/>
       <g>
         <path class="leaf" d="M58 190 q-26 -6 -34 -26 q22 2 34 26z"/>
@@ -268,10 +284,23 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       </g>
       <path class="star" d="M60 0l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>
     </svg>
-    <div>
-      <blockquote>Bir kupa, günün <b>ilk sessizliğini</b> taşır. Biz o sessizliğe bir desen çiziyoruz.</blockquote>
-      <cite class="caps">Sumeia Atölyesi'nden</cite>
-    </div>
+      <div class="q"><blockquote>Bir kupa, günün <b>ilk sessizliğini</b> taşır. Biz o sessizliğe bir desen çiziyoruz.</blockquote>
+      <cite class="caps">Sumeia Atölyesi'nden</cite></div>
+      <svg class="laurel r" viewBox="0 0 120 220" aria-hidden="true">
+      <path class="stem" d="M60 214 C 58 170 52 120 60 70 C 64 46 62 26 60 10"/>
+      <g>
+        <path class="leaf" d="M58 190 q-26 -6 -34 -26 q22 2 34 26z"/>
+        <path class="leaf" d="M59 176 q24 -10 36 -30 q-24 4 -36 30z"/>
+        <path class="leaf" d="M56 150 q-26 -8 -32 -30 q22 4 32 30z"/>
+        <path class="leaf" d="M57 134 q24 -10 34 -32 q-22 6 -34 32z"/>
+        <path class="leaf" d="M56 108 q-24 -10 -28 -32 q20 6 28 32z"/>
+        <path class="leaf" d="M59 92 q22 -12 30 -32 q-20 8 -30 32z"/>
+        <path class="leaf" d="M60 66 q-20 -12 -22 -32 q18 8 22 32z"/>
+        <path class="leaf" d="M61 52 q18 -12 22 -30 q-18 8 -22 30z"/>
+      </g>
+      <path class="star" d="M60 0l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>
+    </svg>
+    </figure>
   </div>
 </section>
 
