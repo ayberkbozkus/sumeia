@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Sumeia Sanat Akademisi tasarım atölyesi: size özel tasarlanan kupalar.">
+<link rel="icon" href="logo-clear.webp">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Sumeia Sanat Akademisi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Marcellus&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#ECE5D8; --surface:#F5F0E6; --ink:#26221C; --muted:#6B6253;
+  --gold:#9E7234; --gold-soft:rgba(158,114,52,.18); --olive:#585B42;
+  --line:rgba(38,34,28,.16); --arch:#E3D6C4; --stage:#E4DBCB;
+  --display:"Cormorant Garamond","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --caps:"Marcellus","Trajan Pro","Cormorant Garamond",Georgia,serif;
+  --body:"Figtree","Avenir Next","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#14120E; --surface:#1D1A15; --ink:#EDE4D3; --muted:#A69B88;
+    --gold:#CFA465; --gold-soft:rgba(207,164,101,.16); --olive:#A3A77F;
+    --line:rgba(237,228,211,.14); --stage:#221E18; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#14120E; --surface:#1D1A15; --ink:#EDE4D3; --muted:#A69B88;
+  --gold:#CFA465; --gold-soft:rgba(207,164,101,.16); --olive:#A3A77F;
+  --line:rgba(237,228,211,.14); --stage:#221E18; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ground);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.caps{font-family:var(--caps);text-transform:uppercase;letter-spacing:.22em;font-size:.74rem}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0}
+h2{font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.02}
+h2 em,h1 em{font-style:italic;color:var(--gold)}
+p{margin:0}
+.lede{color:var(--muted);max-width:58ch}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--ground) 86%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--caps);letter-spacing:.28em;font-size:1rem}
+.brand svg{width:14px;height:14px;color:var(--gold)}
+.links{display:flex;gap:28px;align-items:center}
+.links a{text-decoration:none;color:var(--muted);transition:color .25s}
+.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--caps);text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;padding:14px 22px;border:1px solid var(--ink);background:var(--ink);color:var(--ground);text-decoration:none;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold);background:transparent}
+.btn.sm{padding:10px 16px}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,96px) clamp(48px,7vw,88px)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,6vw,80px);align-items:center}
+.eyebrow{display:flex;align-items:center;gap:14px;color:var(--gold)}
+.eyebrow::before{content:"";width:36px;height:1px;background:currentColor}
+.hero h1{font-size:clamp(3rem,7.4vw,6.4rem);line-height:.96;margin:26px 0 28px;letter-spacing:-.01em}
+.hero h1 .ln{display:block;overflow:hidden;padding:.06em .12em .16em 0;margin-bottom:-.12em}
+.hero h1 .ln span{display:inline-block;animation:rise 1.1s cubic-bezier(.2,.7,.1,1) both}
+.hero h1 .ln:nth-child(2) span{animation-delay:.15s}
+.hero .lede{font-size:1.08rem;animation:fade 1.2s .45s both}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;animation:fade 1.2s .6s both}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.arch{position:relative;justify-self:center;width:min(86%,420px);aspect-ratio:1/1.18;margin-block:20px;animation:fade 1.4s .2s both}
+.arch-frame{position:absolute;inset:0;border-radius:999px 999px 10px 10px;background:radial-gradient(90% 70% at 50% 40%,#EDE3D3,var(--arch));overflow:hidden;box-shadow:0 40px 70px -40px rgba(40,30,15,.45),inset 0 0 0 1px rgba(158,114,52,.28)}
+.arch-frame img{position:absolute;left:12%;bottom:8%;width:76%;height:auto;transition:transform .8s cubic-bezier(.2,.7,.1,1)}
+.arch svg.orbit{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.orbit .ring{fill:none;stroke:var(--gold);stroke-width:.8;stroke-dasharray:1500;stroke-dashoffset:1500;animation:draw 3.2s .5s cubic-bezier(.5,0,.2,1) forwards}
+.orbit .dust{fill:var(--gold)}
+.twinkle{transform-box:fill-box;transform-origin:center;animation:twinkle 4s ease-in-out infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes twinkle{0%,100%{transform:scale(.7) rotate(0);opacity:.6}50%{transform:scale(1.15) rotate(45deg);opacity:1}}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding-block:18px;background:var(--surface)}
+.track{display:flex;width:max-content;animation:slide 38s linear infinite}
+.track span{font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.9rem);padding-inline:28px;white-space:nowrap;display:flex;align-items:center;gap:56px}
+.track span::after{content:"✦";font-style:normal;font-size:.7em;color:var(--gold)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{scroll-margin-top:72px}
+.sec{padding-block:clamp(72px,10vw,128px)}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:clamp(40px,5vw,64px)}
+.sec-head .caps{color:var(--gold);display:block;margin-bottom:18px}
+
+/* collection */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,24px)}
+.piece{display:flex;flex-direction:column;gap:14px}
+.piece .stage{position:relative;aspect-ratio:4/5;background:radial-gradient(120% 80% at 50% 30%,var(--surface),var(--stage));border-radius:2px;overflow:hidden;cursor:pointer}
+.piece canvas{width:100%;height:100%;display:block;transition:transform .7s cubic-bezier(.2,.7,.1,1)}
+.piece:hover canvas{transform:translateY(-6px) scale(1.03)}
+.piece .glaze{position:absolute;left:14px;top:14px;color:var(--muted);font-size:.66rem}
+.piece h3{font-size:1.7rem;line-height:1}
+.piece p{color:var(--muted);font-size:.94rem}
+.piece .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--gold);cursor:pointer;font-family:var(--caps);letter-spacing:.18em;text-transform:uppercase;font-size:.66rem;white-space:nowrap}
+.linkbtn:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* manifesto */
+.manifesto{background:var(--surface);border-block:1px solid var(--line);position:relative;overflow:hidden}
+.manifesto .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,72px);align-items:center}
+.manifesto blockquote{margin:0;font-family:var(--display);font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1.12;font-style:italic;max-width:22ch;text-wrap:balance}
+.manifesto blockquote b{font-weight:400;font-style:normal;color:var(--gold)}
+.manifesto cite{display:block;margin-top:24px;font-style:normal;color:var(--muted)}
+.laurel{width:clamp(90px,14vw,170px);color:var(--olive);transform-origin:50% 100%;animation:sway 7s ease-in-out infinite}
+.laurel .leaf{fill:currentColor;opacity:.85}
+.laurel .stem{fill:none;stroke:currentColor;stroke-width:1.4}
+.laurel .star{fill:var(--gold)}
+@keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2.5deg)}}
+
+/* designer */
+.designer{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:stretch}
+.bigstage{position:relative;min-height:460px;background:radial-gradient(90% 70% at 45% 35%,var(--surface),var(--stage));border:1px solid var(--line);border-radius:2px}
+.bigstage canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab;touch-action:pan-y}
+.bigstage canvas:active{cursor:grabbing}
+.bigstage .hint{position:absolute;left:18px;bottom:16px;color:var(--muted);font-size:.66rem}
+.panel{display:flex;flex-direction:column;gap:30px;padding-block:8px}
+.field{display:flex;flex-direction:column;gap:12px}
+.field>label,.field>.lbl{color:var(--muted)}
+.swatches{display:flex;flex-wrap:wrap;gap:10px}
+.sw{display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font:500 .88rem var(--body);border-radius:999px;transition:border-color .25s}
+.sw i{width:22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.sw[aria-pressed="true"]{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.chip{padding:12px 8px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font-family:var(--display);font-size:1.15rem;font-style:italic;transition:border-color .25s,background .25s}
+.chip[aria-pressed="true"]{border-color:var(--gold);background:var(--gold-soft)}
+input[type=text]{width:100%;padding:14px 0;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);font:italic 1.6rem var(--display);outline:none;transition:border-color .25s}
+input[type=text]:focus{border-color:var(--gold)}
+input[type=text]::placeholder{color:var(--muted);opacity:.6}
+.summary{border-top:1px solid var(--line);padding-top:22px;display:flex;flex-direction:column;gap:16px}
+.summary output{font-family:var(--display);font-size:1.25rem;line-height:1.4}
+.summary .note{color:var(--muted);font-size:.88rem}
+.toast{color:var(--gold);font-size:.88rem;min-height:1.4em}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
+.step{padding:28px 22px 8px 0;display:flex;flex-direction:column;gap:12px;position:relative}
+.step+.step{padding-left:22px;border-left:1px solid var(--line)}
+.step .num{font-family:var(--display);font-size:2.6rem;line-height:1;color:var(--gold);font-style:italic}
+.step h3{font-family:var(--caps);font-size:.86rem;letter-spacing:.2em;text-transform:uppercase}
+.step p{color:var(--muted);font-size:.93rem}
+
+/* contact / footer */
+.contact{text-align:left}
+.contact .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.seal{width:clamp(170px,22vw,250px);aspect-ratio:1/1.18;border-radius:999px 999px 8px 8px;overflow:hidden;background:var(--arch);box-shadow:inset 0 0 0 1px rgba(158,114,52,.28);display:flex;align-items:flex-end;justify-content:center;padding:18% 12% 9%}
+.seal img{width:100%;height:auto;display:block}
+.contact h2{margin-bottom:18px}
+.contact .cta{animation:none}
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.rise-in{transition:transform .9s cubic-bezier(.2,.7,.1,1)}
+.rise-in.pre{transform:translateY(24px)}
+
+@media (max-width:920px){
+  .hero .wrap,.designer,.sec-head{grid-template-columns:1fr}
+  .arch{width:min(78%,360px)}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr 1fr}
+  .step,.step+.step{padding:22px 16px 18px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .links a:not(.btn){display:none}
+}
+@media (max-width:560px){
+  .grid{grid-template-columns:1fr 1fr;gap:12px}
+  .piece h3{font-size:1.35rem}
+  .piece p{display:none}
+  .piece .row{flex-direction:column;gap:6px}
+  .manifesto .wrap,.contact .wrap{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .chips{grid-template-columns:1fr 1fr}
+  .bigstage{min-height:380px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}
+  .orbit .ring{stroke-dashoffset:0}
+  html{scroll-behavior:auto}
+}
+</style>
+
+</head>
+<body>
+<nav class="nav" aria-label="Ana menü">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l1.6 8.4L20 10l-8.4 1.6L10 20l-1.6-8.4L0 10l8.4-1.6z"/></svg>SUMEIA</a>
+    <div class="links">
+      <a href="#koleksiyon">Koleksiyon</a>
+      <a href="#surec">Süreç</a>
+      <a href="#iletisim">İletişim</a>
+      <a class="btn sm" href="#tasarla">Kupanı tasarla</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow caps">Tasarım Atölyesi · Özel Tasarım Kupalar</div>
+      <h1><span class="ln"><span>Bir desen çizeriz,</span></span><span class="ln"><span><em>kupa</em> sizin olur.</span></span></h1>
+      <p class="lede">Sumeia Sanat Akademisi'nin atölyesinde her kupa size özel tasarlanır. Bir isim, bir tarih, bir hatıra; her sabah elinizde duracak, yalnızca size ait bir parça.</p>
+      <div class="cta">
+        <a class="btn" href="#tasarla">Kupanı tasarla</a>
+        <a class="btn ghost" href="#koleksiyon">Koleksiyonu gör</a>
+      </div>
+    </div>
+    <div class="arch" id="arch">
+      <div class="arch-frame"><img src="logo-clear.webp" alt="Sumeia Sanat Akademisi logosu: defne dallarıyla çevrili S harfi içinde kadın profili" id="archImg"></div>
+      <svg class="orbit" viewBox="0 0 400 472" preserveAspectRatio="none" aria-hidden="true">
+        <path class="ring" d="M-14 486 V200 A214 214 0 0 1 414 200 V486"/>
+        <circle class="dust" cx="-14" cy="486" r="2.4"/>
+        <circle class="dust" cx="414" cy="486" r="2.4"/>
+        <path class="dust twinkle" d="M200 -32l3 13 13 3-13 3-3 13-3-13-13-3 13-3z"/>
+        <path class="dust twinkle" style="animation-delay:-1.3s" d="M378 52l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/>
+        <path class="dust twinkle" style="animation-delay:-2.6s" d="M22 52l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>El çizimi desenler</span><span>Kişiye özel yazı</span><span>Seramik kupa</span><span>Atölyede tek tek</span><span>Hediye için tasarım</span>
+    <span>El çizimi desenler</span><span>Kişiye özel yazı</span><span>Seramik kupa</span><span>Atölyede tek tek</span><span>Hediye için tasarım</span>
+  </div>
+</div>
+
+<section class="sec" id="koleksiyon">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="caps">Koleksiyon</span><h2>Dört desen, <em>dört ruh hâli.</em></h2></div>
+      <p class="lede">Her desen atölyede kâğıt üzerinde başlar. Beğendiğinizi seçin, rengini ve üzerindeki yazıyı birlikte değiştirelim.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="manifesto sec" aria-label="Atölye">
+  <div class="wrap">
+    <svg class="laurel" viewBox="0 0 120 220" aria-hidden="true">
+      <path class="stem" d="M60 214 C 58 170 52 120 60 70 C 64 46 62 26 60 10"/>
+      <g>
+        <path class="leaf" d="M58 190 q-26 -6 -34 -26 q22 2 34 26z"/>
+        <path class="leaf" d="M59 176 q24 -10 36 -30 q-24 4 -36 30z"/>
+        <path class="leaf" d="M56 150 q-26 -8 -32 -30 q22 4 32 30z"/>
+        <path class="leaf" d="M57 134 q24 -10 34 -32 q-22 6 -34 32z"/>
+        <path class="leaf" d="M56 108 q-24 -10 -28 -32 q20 6 28 32z"/>
+        <path class="leaf" d="M59 92 q22 -12 30 -32 q-20 8 -30 32z"/>
+        <path class="leaf" d="M60 66 q-20 -12 -22 -32 q18 8 22 32z"/>
+        <path class="leaf" d="M61 52 q18 -12 22 -30 q-18 8 -22 30z"/>
+      </g>
+      <path class="star" d="M60 0l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>
+    </svg>
+    <div>
+      <blockquote>Bir kupa, günün <b>ilk sessizliğini</b> taşır. Biz o sessizliğe bir desen çiziyoruz.</blockquote>
+      <cite class="caps">Sumeia Tasarım Atölyesi</cite>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="tasarla">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="caps">Atölye masası</span><h2>Kupanı <em>tasarla.</em></h2></div>
+      <p class="lede">Rengi seçin, deseni seçin, üzerine bir isim yazın. Kupayı sürükleyip çevirerek her yanına bakabilirsiniz.</p>
+    </div>
+    <div class="designer">
+      <div class="bigstage">
+        <canvas id="bigMug" aria-label="Tasarladığınız kupanın döndürülebilir önizlemesi" role="img"></canvas>
+        <span class="hint caps">Sürükle ve çevir</span>
+      </div>
+      <div class="panel">
+        <div class="field">
+          <span class="lbl caps" id="lbl-glaze">Renk</span>
+          <div class="swatches" id="glazes" role="group" aria-labelledby="lbl-glaze"></div>
+        </div>
+        <div class="field">
+          <span class="lbl caps" id="lbl-motif">Desen</span>
+          <div class="chips" id="motifs" role="group" aria-labelledby="lbl-motif"></div>
+        </div>
+        <div class="field">
+          <label class="caps" for="mug-name">Üzerine yazılacak</label>
+          <input type="text" id="mug-name" maxlength="16" placeholder="Bir isim, bir tarih…" autocomplete="off">
+        </div>
+        <div class="summary">
+          <output id="summary" aria-live="polite"></output>
+          <p class="note">Tasarımınızı kopyalayıp bize iletin; eskizini hazırlayıp onayınıza sunalım.</p>
+          <div><button class="btn" id="copy" type="button">Tasarımı kopyala</button></div>
+          <div class="toast" id="toast" role="status"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="surec" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="caps">Süreç</span><h2>Hikâyeden <em>kupaya.</em></h2></div>
+      <p class="lede">Beş adımda, her aşamada sizinle birlikte.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="num">I</span><h3>Hikâye</h3><p>Bir isim, bir tarih, bir çizim ya da sadece bir his. Neyi anlatmak istediğinizi dinleriz.</p></div>
+      <div class="step"><span class="num">II</span><h3>Eskiz</h3><p>Desen kâğıt üzerinde çizilir ve kupaya nasıl yerleşeceği size gösterilir.</p></div>
+      <div class="step"><span class="num">III</span><h3>Onay</h3><p>Renk, yazı ve yerleşim sizin onayınızla son hâlini alır.</p></div>
+      <div class="step"><span class="num">IV</span><h3>Üretim</h3><p>Kupanız atölyede tek tek hazırlanır, her detay elden geçer.</p></div>
+      <div class="step"><span class="num">V</span><h3>Teslim</h3><p>Özenle paketlenir ve size ya da hediye edeceğiniz kişiye ulaşır.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec manifesto contact" id="iletisim">
+  <div class="wrap">
+    <div class="seal"><img src="logo-clear.webp" alt=""></div>
+    <div>
+      <span class="caps" style="color:var(--gold);display:block;margin-bottom:18px">Sipariş ve özel tasarım</span>
+      <h2>Aklınızdaki kupayı <em>birlikte çizelim.</em></h2>
+      <p class="lede">Kurumsal hediyeler, düğün ve doğum günleri, ekibinize ya da sevdiklerinize özel seriler. İletişim bilgilerimiz çok yakında burada.</p>
+      <div class="cta"><a class="btn" href="#tasarla">Tasarıma başla</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span class="caps">Sumeia Sanat Akademisi</span><span>© 2026 · Tasarım Atölyesi</span></div>
+</footer>
+
+<script>
+(() => {
+const GLAZES = {
+  parsomen:{name:"Parşömen", base:"#E6DCC6", motif:"#3A2F24", gold:"#A57A3C", dip:"#8A6440"},
+  kirec:{name:"Kireç", base:"#EFEBE1", motif:"#27456B", gold:"#B08A4A", dip:"#2F5680"},
+  zeytin:{name:"Zeytin", base:"#646A4B", motif:"#EDE3CC", gold:"#D6B274", dip:"#353A26"},
+  gul:{name:"Gül Kurusu", base:"#C49A87", motif:"#4A2E25", gold:"#7E5329", dip:"#8E5A48"},
+  gece:{name:"Gece", base:"#222838", motif:"#DCCCA8", gold:"#D4AA62", dip:"#10141E"}
+};
+const MOTIFS = {defne:"Defne", yildiz:"Yıldız", muhur:"Mühür", dalga:"Dalga"};
+const COLLECTION = [
+  {id:"defne", glaze:"parsomen", motif:"defne", title:"Defne", text:"Sonsuz bir dal kupanın etrafında dolanır. Logomuzdan doğan ilk desen."},
+  {id:"kuzey", glaze:"gece", motif:"yildiz", title:"Kuzey Yıldızı", text:"Gece mavisinin üzerinde altın yıldızlar. Uzun akşamlar için."},
+  {id:"muhur", glaze:"zeytin", motif:"muhur", title:"Mühür", text:"Zeytin yeşili üzerinde S mührü. Sade, ağırbaşlı, klasik."},
+  {id:"dalga", glaze:"kirec", motif:"dalga", title:"Dalga", text:"Kireç beyazında akan çizgiler. Sabah kahvesinin sakinliği."}
+];
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const TAU = Math.PI*2;
+
+function shade(hex, amt){
+  const n = parseInt(hex.slice(1),16);
+  let r=n>>16, g=(n>>8)&255, b=n&255;
+  const f = amt<0 ? 0 : 255, t = Math.abs(amt);
+  r = Math.round(r+(f-r)*t); g = Math.round(g+(f-g)*t); b = Math.round(b+(f-b)*t);
+  return `rgb(${r},${g},${b})`;
+}
+function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function star4(c,x,y,R){c.beginPath();for(let i=0;i<8;i++){const a=i*Math.PI/4-Math.PI/2, r=i%2?R*.24:R;c.lineTo(x+Math.cos(a)*r,y+Math.sin(a)*r)}c.closePath();c.fill()}
+function wrapDraw(PW, x, reach, fn){for(const o of [-PW,0,PW]){const xx=x+o;if(xx>-reach&&xx<PW+reach)fn(xx)}}
+function leaf(c,x,y,a,L,w){c.save();c.translate(x,y);c.rotate(a);c.beginPath();c.moveTo(0,0);c.quadraticCurveTo(L*.5,-w,L,0);c.quadraticCurveTo(L*.5,w,0,0);c.fill();c.restore()}
+
+function hashStr(s){let h=2166136261;for(const ch of s){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0}
+// periodic smooth noise over [0,1): seamless around the mug
+function ringNoise(seed,k=5){const r=rng(seed),a=[];for(let i=1;i<=k;i++)a.push([r()/i,r()*TAU,i]);return u=>a.reduce((s,[amp,ph,f])=>s+amp*Math.sin(TAU*f*u+ph),0)}
+// a brush stroke: width and ink load change along the path
+function brush(c,pts,w,color,r){
+  c.strokeStyle=color;c.lineCap="round";c.lineJoin="round";
+  for(let i=1;i<pts.length;i++){
+    const t=i/pts.length, press=Math.sin(Math.PI*Math.min(1,t*1.15))*.75+.35;
+    c.globalAlpha=.78+r()*.22;c.lineWidth=Math.max(.8,w*press*(.8+r()*.4));
+    c.beginPath();c.moveTo(pts[i-1][0],pts[i-1][1]);c.lineTo(pts[i][0],pts[i][1]);c.stroke();
+  }
+  c.globalAlpha=1;
+}
+function paintLeaf(c,x,y,a,L,w,color,vein,r){
+  c.save();c.translate(x,y);c.rotate(a+(r()-.5)*.25);const l=L*(.82+r()*.3),ww=w*(.8+r()*.4),bend=(r()-.5)*ww*.8;
+  c.fillStyle=color;c.globalAlpha=.86+r()*.14;
+  c.beginPath();c.moveTo(0,0);c.bezierCurveTo(l*.25,-ww*1.1+bend,l*.7,-ww*.9+bend,l,bend*.4);c.bezierCurveTo(l*.7,ww*.8+bend,l*.3,ww*.9,0,0);c.fill();
+  c.globalAlpha=.18;c.beginPath();c.ellipse(l*.45,-ww*.2+bend*.5,l*.28,ww*.35,0,0,TAU);c.fillStyle=vein;c.fill();
+  c.globalAlpha=.55;c.strokeStyle=vein;c.lineWidth=Math.max(.6,ww*.12);c.beginPath();c.moveTo(l*.06,0);c.quadraticCurveTo(l*.5,bend*.6,l*.92,bend*.4);c.stroke();
+  c.restore();c.globalAlpha=1;
+}
+function paintStar(c,x,y,R,r){c.beginPath();for(let i=0;i<8;i++){const a=i*Math.PI/4-Math.PI/2+(r()-.5)*.12,rr=(i%2?R*.22:R)*(.85+r()*.3);c.lineTo(x+Math.cos(a)*rr,y+Math.sin(a)*rr)}c.closePath();c.fill()}
+
+// geometry of the glaze on the unrolled mug (fractions of height)
+const RIM=.05, DIP_END=.2, FOOT=.885;
+
+function makePattern(state, PW, PH){
+  const cv=document.createElement("canvas");cv.width=PW;cv.height=PH;
+  const c=cv.getContext("2d"), G=GLAZES[state.glaze], seed=hashStr(state.glaze+state.motif);
+  const r=rng(seed);
+  // body glaze with pooling
+  c.fillStyle=G.base;c.fillRect(0,0,PW,PH);
+  const pool=c.createLinearGradient(0,0,0,PH);
+  pool.addColorStop(0,"rgba(255,255,255,.06)");pool.addColorStop(.6,"rgba(0,0,0,0)");pool.addColorStop(.86,"rgba(0,0,0,.12)");
+  c.fillStyle=pool;c.fillRect(0,0,PW,PH);
+  for(let i=0;i<18;i++){const x=r()*PW,y=PH*(.25+r()*.6),rad=PH*(.05+r()*.12);
+    const g=c.createRadialGradient(x,y,0,x,y,rad);g.addColorStop(0,`rgba(0,0,0,${.03+r()*.04})`);g.addColorStop(1,"rgba(0,0,0,0)");
+    c.fillStyle=g;c.fillRect(x-rad,y-rad,rad*2,rad*2)}
+
+  // hand painted motif
+  const m=state.motif, lw=Math.max(1.4,PH*.011);
+  if(m==="defne"){
+    const n=Math.max(2,Math.round(PW/300)), p=PW/n, mid=PH*.52, A=PH*.07, wob=ringNoise(seed+3,4);
+    const y=x=>mid+A*Math.sin(TAU*x/p)+PH*.018*wob(x/PW);
+    const pts=[];for(let x=-10;x<=PW+10;x+=6)pts.push([x,y(x)+(r()-.5)*1.2]);
+    brush(c,pts,lw*1.1,G.motif,r);
+    const L=PH*.13,w=PH*.045;
+    for(let k=0;k<n;k++)for(let j=0;j<9;j++){
+      const rr=rng(seed+j*13), x=k*p+(j+.5)*p/9+(rr()-.5)*p*.03, yy=y(x);
+      const slope=Math.atan(A*TAU/p*Math.cos(TAU*x/p)), side=j%2?1:-1;
+      wrapDraw(PW,x,L*1.3,xx=>{paintLeaf(c,xx,yy,slope+side*(.75+rr()*.35),L,w,G.motif,G.base,rr);
+        if(j%3===1){c.fillStyle=G.gold;c.beginPath();c.arc(xx+p/22,yy-side*PH*.03,PH*(.011+rr()*.006),0,TAU);c.fill()}});
+    }
+  } else if(m==="yildiz"){
+    const n=Math.max(2,Math.round(PW/240)), p=PW/n;
+    for(let k=0;k<n;k++){const rr=rng(seed+k*101);
+      for(let i=0;i<13;i++){const x=k*p+rr()*p, y=PH*(.3+rr()*.48), R=PH*(.016+rr()*.05), gold=rr()>.35;
+        wrapDraw(PW,x,R,xx=>{c.fillStyle=gold?G.gold:G.motif;c.globalAlpha=.85+rr()*.15;paintStar(c,xx,y,R,rr);c.globalAlpha=1})}
+      for(let i=0;i<34;i++){c.fillStyle=G.motif;c.globalAlpha=.35+rr()*.4;c.beginPath();c.arc(k*p+rr()*p,PH*(.28+rr()*.55),.6+rr()*1.4,0,TAU);c.fill()}
+      c.globalAlpha=1;
+      const cx=k*p+p*.5, cy=PH*.54, R=PH*.19, pts=[];
+      for(let a=0;a<=TAU*.93;a+=.08)pts.push([cx+Math.cos(a-2)*R*(1+(rr()-.5)*.02),cy+Math.sin(a-2)*R*(1+(rr()-.5)*.02)]);
+      brush(c,pts,lw*.7,G.gold,rr);
+    }
+  } else if(m==="muhur"){
+    const n=3,p=PW/n;
+    for(let k=0;k<n;k++){const rr=rng(seed+k*7), x=k*p+p*.5, y=PH*.53, R=PH*.2;
+      const pts=[];for(let a=0;a<=TAU*1.04;a+=.07)pts.push([x+Math.cos(a)*R*(1+(rr()-.5)*.025),y+Math.sin(a)*R*(1+(rr()-.5)*.025)]);
+      brush(c,pts,lw*.9,G.gold,rr);
+      c.save();c.translate(x,y);c.rotate((rr()-.5)*.12);c.fillStyle=G.motif;c.globalAlpha=.92;
+      c.font=`italic 500 ${PH*.36}px "Cormorant Garamond", Georgia, serif`;c.textAlign="center";c.textBaseline="middle";c.fillText("S",0,PH*.01);c.restore();c.globalAlpha=1;
+      c.fillStyle=G.gold;paintStar(c,x,y-R-PH*.05,PH*.03,rr);
+      for(let d=-2;d<=2;d++){c.fillStyle=G.motif;c.globalAlpha=.5+rr()*.3;c.beginPath();c.arc(k*p+(rr()-.5)*4,y+d*PH*.06,PH*(.006+rr()*.004),0,TAU);c.fill()}
+      c.globalAlpha=1;
+    }
+  } else if(m==="dalga"){
+    const n=Math.max(2,Math.round(PW/220));
+    for(let i=0;i<5;i++){const wob=ringNoise(seed+i*9,3),rr=rng(seed+i),pts=[];
+      for(let x=-10;x<=PW+10;x+=5)pts.push([x,PH*(.33+i*.1)+PH*.035*Math.sin(TAU*n*x/PW+i*.9)+PH*.012*wob(x/PW)]);
+      brush(c,pts,i===2?lw*.8:lw*1.15,i===2?G.gold:G.motif,rr)}
+  }
+
+  // personal text, painted on the front
+  if(state.name){
+    c.save();c.translate(PW/2,PH*.79);c.rotate(-.02);c.fillStyle=G.motif;c.globalAlpha=.9;
+    c.font=`italic 500 ${PH*.095}px "Cormorant Garamond", Georgia, serif`;c.textAlign="center";c.textBaseline="middle";
+    c.fillText(state.name,0,0);c.restore();c.globalAlpha=1;
+  }
+
+  // dipped rim glaze with drips
+  const dip=ringNoise(seed+11,6), dr=rng(seed+17);
+  c.fillStyle=G.dip;c.beginPath();c.moveTo(0,0);
+  for(let x=0;x<=PW;x+=4){const u=x/PW;c.lineTo(x,PH*(DIP_END-.03+.035*dip(u)))}
+  c.lineTo(PW,0);c.closePath();c.globalAlpha=.94;c.fill();
+  for(let i=0;i<Math.round(PW/110);i++){
+    const x=dr()*PW, len=PH*(.04+dr()*.13), w=PH*(.012+dr()*.02), y0=PH*(DIP_END-.03+.035*dip(x/PW))-2;
+    wrapDraw(PW,x,w*2,xx=>{c.beginPath();c.moveTo(xx-w,y0);c.bezierCurveTo(xx-w,y0+len*.6,xx-w*.8,y0+len,xx,y0+len);c.bezierCurveTo(xx+w*.8,y0+len,xx+w,y0+len*.6,xx+w,y0);c.closePath();c.fill()});
+  }
+  c.globalAlpha=.35;c.strokeStyle=G.base;c.lineWidth=1.2;c.beginPath();
+  for(let x=0;x<=PW;x+=4){const y=PH*(DIP_END-.03+.035*dip(x/PW));x?c.lineTo(x,y):c.moveTo(x,y)}c.stroke();c.globalAlpha=1;
+  // luster rim line, painted by hand
+  const rimPts=[];for(let x=-8;x<=PW+8;x+=6)rimPts.push([x,PH*RIM*.55+(dr()-.5)*1.4]);
+  brush(c,rimPts,Math.max(1.4,PH*.009),G.gold,dr);
+
+  // raw clay foot: the glaze stops unevenly
+  const foot=ringNoise(seed+23,7);
+  c.fillStyle="#B8987A";c.beginPath();c.moveTo(0,PH);
+  for(let x=0;x<=PW;x+=3)c.lineTo(x,PH*(FOOT+.012*foot(x/PW)));
+  c.lineTo(PW,PH);c.closePath();c.fill();
+  c.strokeStyle="rgba(0,0,0,.25)";c.lineWidth=1.4;c.beginPath();
+  for(let x=0;x<=PW;x+=3){const y=PH*(FOOT+.012*foot(x/PW));x?c.lineTo(x,y):c.moveTo(x,y)}c.stroke();
+  // maker's stamp pressed into the clay, on the back
+  c.strokeStyle="rgba(70,48,28,.55)";c.lineWidth=1.2;c.beginPath();c.arc(0,PH*.945,PH*.028,0,TAU);c.stroke();c.beginPath();c.arc(PW,PH*.945,PH*.028,0,TAU);c.stroke();
+  c.fillStyle="rgba(70,48,28,.6)";c.font=`italic ${PH*.04}px "Cormorant Garamond", Georgia, serif`;c.textAlign="center";c.textBaseline="middle";
+  c.fillText("S",0,PH*.947);c.fillText("S",PW,PH*.947);
+
+  // stoneware speckle through the glaze and the clay
+  const sp=rng(seed+31);
+  for(let i=0;i<PW*PH/900;i++){const big=sp()>.93;c.fillStyle=big?"rgba(60,38,20,.55)":"rgba(60,38,20,.28)";c.beginPath();c.arc(sp()*PW,sp()*PH,big?.9+sp()*1.3:.5+sp()*.6,0,TAU);c.fill()}
+  for(let i=0;i<PW*PH/3000;i++){c.fillStyle="rgba(255,250,235,.35)";c.fillRect(sp()*PW,sp()*PH,1,1)}
+  return cv;
+}
+
+class Mug{
+  constructor(canvas, state, opts={}){
+    this.cv=canvas; this.ctx=canvas.getContext("2d"); this.state={...state};
+    this.rot=opts.rot ?? Math.random()*TAU; this.speed=opts.speed ?? .25; this.boost=0; this.visible=true;
+    this.scale=opts.scale ?? 1;
+    new ResizeObserver(()=>this.resize()).observe(canvas); this.resize();
+  }
+  resize(){
+    const dpr=Math.min(2,devicePixelRatio||1), r=this.cv.getBoundingClientRect();
+    if(!r.width) return;
+    this.w=r.width; this.h=r.height; this.dpr=dpr;
+    this.cv.width=Math.round(r.width*dpr); this.cv.height=Math.round(r.height*dpr);
+    this.geom(); this.pattern=null; this.draw();
+  }
+  geom(){
+    const s=Math.min(this.w*.5, this.h*.54)*this.scale;
+    this.bw=s; this.r=s/2; this.cx=this.w*.43; this.bh=s*1.02; this.y0=(this.h-this.bh)/2 - s*.02; this.ry=this.r*.2;
+  }
+  set(state){Object.assign(this.state,state); this.pattern=null; this.draw()}
+  draw(){
+    if(!this.w) return;
+    const c=this.ctx, d=this.dpr, G=GLAZES[this.state.glaze];
+    const {r,cx,y0,bh,ry}=this, x0=cx-r, y1=y0+bh;
+    if(!this.pattern){const PH=Math.round(bh*d); this.pattern=makePattern(this.state, Math.round(TAU*r*d), PH);
+      const s=hashStr(this.state.glaze+this.state.motif); this.rimN=ringNoise(s+41,6); this.footN=ringNoise(s+43,4)}
+    const P=this.pattern, PW=P.width, PH=P.height, rim=this.rimN, footN=this.footN, rot=this.rot;
+    const uOf=th=>{let u=((th+rot)/TAU)%1;return u<0?u+1:u};
+    const rimDy=u=>r*.028*rim(u), footDy=u=>r*.012*footN(u);
+    c.setTransform(d,0,0,d,0,0); c.clearRect(0,0,this.w,this.h);
+    // shadow
+    const sg=c.createRadialGradient(cx+r*.12,y1+ry*.95,0,cx+r*.12,y1+ry*.95,r*1.3);
+    sg.addColorStop(0,"rgba(30,22,10,.34)"); sg.addColorStop(1,"rgba(30,22,10,0)");
+    c.fillStyle=sg; c.beginPath(); c.ellipse(cx+r*.12,y1+ry*.95,r*1.3,ry*1.35,0,0,TAU); c.fill();
+    // pulled handle: thick at the top, thinning toward the base
+    const hx=cx+r, B=t=>{const p0=[hx-r*.1,y0+bh*.2],p1=[hx+r*.8,y0+bh*.08],p2=[hx+r*.74,y0+bh*.74],p3=[hx-r*.1,y0+bh*.7],m=1-t;
+      return [m*m*m*p0[0]+3*m*m*t*p1[0]+3*m*t*t*p2[0]+t*t*t*p3[0], m*m*m*p0[1]+3*m*m*t*p1[1]+3*m*t*t*p2[1]+t*t*t*p3[1]]};
+    const hw=t=>r*(.12-.035*t+.01*Math.sin(t*9));
+    for(const [col,k,ox,oy] of [[shade(G.base,-.32),1,0,0],[G.base,.72,-.5,-.5],[shade(G.base,.28),.22,-r*.035,-r*.035]]){
+      c.fillStyle=col;
+      for(let t=0;t<=1;t+=.012){const [x,y]=B(t);c.beginPath();c.arc(x+ox*(k<1?1:0),y+oy*(k<1?1:0),hw(t)*k,0,TAU);c.fill()}
+    }
+    // body, column by column around the cylinder
+    c.setTransform(1,0,0,1,0,0);
+    const bwp=Math.round(this.bw*d), X0=x0*d, rp=r*d;
+    for(let i=0;i<bwp;i++){
+      const xn=(i+.5-rp)/rp, cl=Math.max(-1,Math.min(1,xn)), th=Math.asin(cl), sq=Math.sqrt(1-cl*cl), u=uOf(th);
+      const top=(y0+ry*sq+rimDy(u))*d, bot=(y1+ry*sq+footDy(u))*d;
+      c.drawImage(P, Math.min(PW-1,Math.floor(u*PW)),0,1,PH, X0+i, top, 1.4, bot-top);
+    }
+    c.setTransform(d,0,0,d,0,0);
+    // body path (front surface) for shading
+    const front=()=>{c.beginPath();
+      for(let a=Math.PI;a>=0;a-=.04){const x=cx+r*Math.cos(a),th=Math.asin(Math.max(-1,Math.min(1,(x-cx)/r)));c.lineTo(x,y0+ry*Math.sin(a)+rimDy(uOf(th)))}
+      for(let a=0;a<=Math.PI;a+=.04){const x=cx+r*Math.cos(a),th=Math.asin(Math.max(-1,Math.min(1,(x-cx)/r)));c.lineTo(x,y1+ry*Math.sin(a)+footDy(uOf(th)))}
+      c.closePath()};
+    c.save(); front(); c.clip();
+    const lg=c.createLinearGradient(x0,0,x0+2*r,0);
+    lg.addColorStop(0,"rgba(20,14,6,.46)"); lg.addColorStop(.15,"rgba(20,14,6,.1)"); lg.addColorStop(.29,"rgba(255,250,240,.24)");
+    lg.addColorStop(.35,"rgba(255,255,255,.05)"); lg.addColorStop(.7,"rgba(20,14,6,.06)"); lg.addColorStop(1,"rgba(20,14,6,.5)");
+    c.fillStyle=lg; c.fillRect(x0,y0-ry*2,2*r,bh+ry*4);
+    // throwing rings left by the wheel
+    for(let k=0;k<9;k++){const yy=y0+bh*(.14+k*.085)+Math.sin(k*2.3)*bh*.01;
+      c.strokeStyle=k%2?"rgba(255,248,235,.09)":"rgba(20,14,6,.08)";c.lineWidth=bh*.012;
+      c.beginPath();c.ellipse(cx,yy,r,ry,0,0,Math.PI);c.stroke()}
+    c.restore();
+    // opening, following the uneven rim
+    const rimPt=a=>{const x=cx+r*Math.cos(a),s=Math.sin(a),cl=Math.max(-1,Math.min(1,(x-cx)/r)),th=s>=0?Math.asin(cl):Math.PI-Math.asin(cl);return [x,y0+ry*s+rimDy(uOf(th))]};
+    const opening=(inset=0)=>{c.beginPath();for(let a=0;a<TAU;a+=.04){const [x,y]=rimPt(a);c.lineTo(cx+(x-cx)*(1-inset),y0+(y-y0)*(1-inset*1.6))}c.closePath()};
+    const ig=c.createLinearGradient(0,y0-ry,0,y0+ry);
+    ig.addColorStop(0,shade(G.dip,-.35)); ig.addColorStop(1,shade(G.dip,.05));
+    c.fillStyle=ig; opening(); c.fill();
+    c.strokeStyle=shade(G.dip,.3); c.lineWidth=1.8; opening(.012); c.stroke();
+    c.strokeStyle=G.gold; c.globalAlpha=.9; c.lineWidth=1.1; c.beginPath();
+    for(let a=0;a<=Math.PI;a+=.04){const [x,y]=rimPt(a);c.lineTo(x,y)} c.stroke(); c.globalAlpha=1;
+  }
+  tick(dt){
+    if(!this.visible||this.dragging) return false;
+    const s=reduce?0:this.speed+this.boost; if(!s) return false;
+    this.rot+=dt*s; this.draw(); return true;
+  }
+}
+
+// collection
+const grid=document.getElementById("grid"), mugs=[];
+COLLECTION.forEach((it,i)=>{
+  const el=document.createElement("article"); el.className="piece rise-in";
+  el.innerHTML=`<div class="stage"><span class="glaze caps">${GLAZES[it.glaze].name}</span><canvas role="img" aria-label="${it.title} desenli ${GLAZES[it.glaze].name.toLowerCase()} kupa"></canvas></div>
+    <div class="row"><h3>${it.title}</h3><button class="linkbtn" type="button">Bu desenle tasarla</button></div><p>${it.text}</p>`;
+  grid.appendChild(el);
+  const m=new Mug(el.querySelector("canvas"),{glaze:it.glaze,motif:it.motif,name:""},{rot:i*1.3,speed:.18});
+  mugs.push(m);
+  const stage=el.querySelector(".stage");
+  stage.addEventListener("mouseenter",()=>m.boost=1.1); stage.addEventListener("mouseleave",()=>m.boost=0);
+  const go=()=>{applyState({glaze:it.glaze,motif:it.motif}); document.getElementById("tasarla").scrollIntoView({behavior:reduce?"auto":"smooth"})};
+  el.querySelector(".linkbtn").addEventListener("click",go); stage.addEventListener("click",go);
+});
+
+// designer
+const state={glaze:"parsomen",motif:"defne",name:""};
+const big=new Mug(document.getElementById("bigMug"),state,{rot:Math.PI,speed:.12,scale:1.05});
+mugs.push(big);
+const gWrap=document.getElementById("glazes"), mWrap=document.getElementById("motifs");
+Object.entries(GLAZES).forEach(([k,g])=>{const b=document.createElement("button");b.type="button";b.className="sw";b.dataset.k=k;b.innerHTML=`<i style="background:${g.base}"></i>${g.name}`;b.onclick=()=>applyState({glaze:k});gWrap.appendChild(b)});
+Object.entries(MOTIFS).forEach(([k,n])=>{const b=document.createElement("button");b.type="button";b.className="chip";b.dataset.k=k;b.textContent=n;b.onclick=()=>applyState({motif:k});mWrap.appendChild(b)});
+const nameIn=document.getElementById("mug-name");
+nameIn.addEventListener("input",()=>applyState({name:nameIn.value.trim()},true));
+function summaryText(){return `Sumeia kupa · Renk: ${GLAZES[state.glaze].name} · Desen: ${MOTIFS[state.motif]}${state.name?` · Yazı: "${state.name}"`:" · Yazı yok"}`}
+function applyState(s,keepRot){
+  Object.assign(state,s);
+  if(!keepRot) big.rot=Math.PI;
+  big.set(state);
+  gWrap.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===state.glaze));
+  mWrap.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===state.motif));
+  if(nameIn.value.trim()!==state.name) nameIn.value=state.name;
+  document.getElementById("summary").textContent=summaryText();
+}
+applyState({});
+// drag to spin
+(()=>{const cv=big.cv;let lx=0,vel=0;
+  cv.addEventListener("pointerdown",e=>{big.dragging=true;lx=e.clientX;vel=0;cv.setPointerCapture(e.pointerId)});
+  cv.addEventListener("pointermove",e=>{if(!big.dragging)return;const dx=e.clientX-lx;lx=e.clientX;vel=dx*.012;big.rot-=vel;big.draw()});
+  const up=()=>{if(!big.dragging)return;big.dragging=false;big.boost=Math.max(-3,Math.min(3,-vel*30));};
+  cv.addEventListener("pointerup",up);cv.addEventListener("pointercancel",up);
+})();
+// copy
+const toast=document.getElementById("toast");
+document.getElementById("copy").addEventListener("click",()=>{
+  const t=summaryText();
+  const ok=()=>{toast.textContent="Kopyalandı. Bize iletmeniz yeterli.";setTimeout(()=>toast.textContent="",4000)};
+  const fallback=()=>{const o=document.getElementById("summary");const r=document.createRange();r.selectNodeContents(o);const s=getSelection();s.removeAllRanges();s.addRange(r);toast.textContent="Metin seçildi, kopyalayabilirsiniz."};
+  try{navigator.clipboard.writeText(t).then(ok,fallback)}catch(e){fallback()}
+});
+
+// visibility for perf + gentle rise-in
+const io=new IntersectionObserver(es=>es.forEach(e=>{const m=mugs.find(m=>m.cv===e.target);if(m)m.visible=e.isIntersecting}),{rootMargin:"80px"});
+mugs.forEach(m=>io.observe(m.cv));
+const ri=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove("pre");ri.unobserve(e.target)}}));
+document.querySelectorAll(".rise-in").forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add("pre");ri.observe(el)}});
+
+// hero parallax
+const arch=document.getElementById("arch"), img=document.getElementById("archImg");
+if(!reduce) arch.addEventListener("pointermove",e=>{const r=arch.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;img.style.transform=`translate(${x*-8}px,${y*-8}px)`});
+arch.addEventListener("pointerleave",()=>img.style.transform="");
+
+// loop
+let last=performance.now();
+function loop(t){const dt=Math.min(.05,(t-last)/1000);last=t;
+  mugs.forEach(m=>{m.tick(dt); if(m.boost&&!m.dragging&&m!==mugs[0]&&m===big){m.boost*=.96;if(Math.abs(m.boost)<.01)m.boost=0}});
+  requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+document.fonts&&document.fonts.ready.then(()=>mugs.forEach(m=>{m.pattern=null;m.draw()}));
+})();
+</script>
+
+</body>
+</html>
